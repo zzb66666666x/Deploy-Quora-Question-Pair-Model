@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quora Question Pair</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="icon" href="{{ url_for('static', filename='img/cs.ico') }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/custom.css') }}">
+    </head>
+
+    <body>
+    
+    <main role="main" class="container extra-bottom">
+        <h1 class="mt-5">Quora Question Pair</title></h1>
+    </main>
+
+    <div class="container">
+        <form class="bs-example bs-example-form" role="form">
+            <h4> question1 </h4>
+            <div class="input-group" id="question1">
+                <input type="text" class="form-control" placeholder="Do you believe there is life after death?">
+            </div>
+            <br>
+            <h4> question2 </h4>
+            <div class="input-group" id="question2">
+                <input type="text" class="form-control" placeholder="Is it true that there is life after death?">
+            </div>
+        </form>
+        <br>
+    </div>
+    
+    <div class="container">
+        <div style="text-align: left;">
+            <button type="button" class="btn btn-outline-info btn-sm" id="check">Check!</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+              <p class="text-muted"><small>App developed by Zhongbo Zhu</small></p>
+        </div>
+    </footer>
+
+    </body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='script/index.js') }}"></script>
+
+
+</html>

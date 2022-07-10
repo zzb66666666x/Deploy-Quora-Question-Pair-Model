@@ -1,0 +1,105 @@
+/* Basic setup */
+/* Some code modified from bootstrap official guide */
+/* ref: https://getbootstrap.com/docs/4.0/examples/sticky-footer/ */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 2em;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2em;
+    /* Set the fixed height of the footer here */
+    line-height: 1.5em;
+    /* Vertically center the text there */
+    background-color: #f5f5f5;
+}
+
+hr {
+    width: 50%;
+    margin: auto;
+}
+
+.table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table tr {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* bootstrap modifications */
+.container {
+    width: auto;
+    vertical-align: middle;
+    max-width: 880px;
+    padding: 0 15px;
+}
+
+.extra-bottom {
+    padding-bottom: 2em;
+}
+
+.task {
+    width: 50%;
+}
+
+.task-id {
+    width: 10%;
+}
+
+.status {
+    width: 20%;
+}
+
+.update {
+    width: 10%;
+}
+
+.button {
+    vertical-align: middle;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+.logoutPos{
+    position:fixed;
+    right:10px;
+    top:5px;
+ }
