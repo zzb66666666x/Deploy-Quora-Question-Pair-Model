@@ -1,10 +1,10 @@
-from keras.models import load_model
-from nltk.corpus import stopwords
-from nltk.stem import SnowballStemmer
-from keras.preprocessing.sequence import pad_sequences
-from keras import backend as K
 import pickle
 import re
+from nltk.corpus import stopwords
+from nltk.stem import SnowballStemmer
+from keras import backend as K
+from keras.models import load_model
+from keras.preprocessing.sequence import pad_sequences
 
 model_MLP = load_model("./model/MLP_model_no_feature_engineering.h5")
 
@@ -75,14 +75,10 @@ def get_prediction(q1_str, q2_str):
     q2_seq = tokenizer.texts_to_sequences([q2_words])
     q1_seq_pad = pad_sequences(q1_seq, maxlen=MAX_SEQUENCE_LENGTH)
     q2_seq_pad = pad_sequences(q2_seq, maxlen=MAX_SEQUENCE_LENGTH)
-    # print(q1_seq_pad)
-    # print(q2_seq_pad)
     pred_result = model_MLP.predict((q1_seq_pad, q2_seq_pad))
     pred_result += model_MLP.predict((q2_seq_pad, q1_seq_pad))
     pred_result /= 2
-    # print(pred_result.shape)
     prob = pred_result[0][0]
-    # print(prob)
     if prob > 0.5:
         return "same meaning"
     else:
