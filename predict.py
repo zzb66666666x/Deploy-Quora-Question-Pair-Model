@@ -5,10 +5,21 @@ from nltk.stem import SnowballStemmer
 from keras import backend as K
 from keras.models import load_model
 from keras.preprocessing.sequence import pad_sequences
+from dev_model import get_MLP
 
-model_MLP = load_model("./model/MLP_model_no_feature_engineering.h5")
+model_MLP = None
 
 MAX_SEQUENCE_LENGTH = 30
+
+def init_model(modelname):
+    global model_MLP
+    if modelname == "MLP":
+        model_MLP = get_MLP()
+        model_MLP.load_weights("./model/MLP_no_feature_engineering_weights.h5")
+        print("model " + modelname + " is loaded")
+    else:
+        raise Exception("no such model equipped")
+
 
 # The function "text_to_wordlist" is from
 # https://www.kaggle.com/currie32/quora-question-pairs/the-importance-of-cleaning-text
@@ -67,6 +78,8 @@ def text_to_wordlist(text, remove_stopwords=False, stem_words=False):
     return(text)
 
 def get_prediction(q1_str, q2_str):
+    global model_MLP
+    print("checking "+ q1_str + " and " + q2_str)
     q1_words = text_to_wordlist(q1_str)
     q2_words = text_to_wordlist(q2_str)
     with open("./model/tokenizer.pickle", "rb") as handle:
