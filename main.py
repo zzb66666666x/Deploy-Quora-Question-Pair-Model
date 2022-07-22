@@ -29,4 +29,4 @@ def make_prediction():
 if __name__ == '__main__':
     print("entering app right now")
     pred.init_model("MLP")
-    app.run(debug = True)
+    app.run(host="0.0.0.0", port=5000)
