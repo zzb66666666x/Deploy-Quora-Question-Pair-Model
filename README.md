@@ -2,7 +2,7 @@
 
 framework: flask
 
-production server choice: apache2 + mod_wgsi
+production server choice: apache2 + mod_wsgi
 
 demo:
 
